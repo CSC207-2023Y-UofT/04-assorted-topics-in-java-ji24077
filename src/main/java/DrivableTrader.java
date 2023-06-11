@@ -11,15 +11,17 @@
  */
 
 import java.util.List;
-class DrivableTrader extends Trader<Drivable>
-{
-    public DomesticatableTrader(List<Domesticatable> inventory,
-                               List<Domesticatable>
-                                       wishlist,
-                               int money)
-    {
+import java.util.HashMap;
+import java.util.Map;
+public class DrivableTrader<T extends Drivable> extends Trader<T> {
+    public DrivableTrader(List<T> inventory, List<T> wishlist, int money) {
         super(inventory, wishlist, money);
     }
+
+    public DrivableTrader(int money) {
+        super(money);
+    }
+}
 
     /**
      * Construct a DomesticatableTrader, giving them the
@@ -27,9 +29,6 @@ class DrivableTrader extends Trader<Drivable>
      *
      * @param money     The Trader's money
      */
-    public DomesticatableTrader(int money) {
-        super(money);
-    }
 
 
     public int getSellingPrice(Domesticatable item) {

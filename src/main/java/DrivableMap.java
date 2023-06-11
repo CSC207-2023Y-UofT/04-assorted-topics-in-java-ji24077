@@ -7,7 +7,8 @@
  * created the constructor for you already.
  */
 
-import ...
+import java.util.HashMap;
+import java.util.Map;
 
 class DrivableMap {
     HashMap<String, Drivable> drivable_map;
