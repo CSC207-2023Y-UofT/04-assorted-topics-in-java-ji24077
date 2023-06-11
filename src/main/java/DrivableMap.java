@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 
+
 class DrivableMap {
     HashMap<String, Drivable> drivable_map;
 
@@ -31,7 +32,7 @@ class DrivableMap {
 
     public boolean addDrivable(String ID, Drivable obj)
     {
-        if(!drivable_map.containsKey(id))
+        if(!drivable_map.containsKey(Id))
         {
             drivable_map.put(Id, obj);
             return true;

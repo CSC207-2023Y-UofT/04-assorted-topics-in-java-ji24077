@@ -13,6 +13,7 @@
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
 public class DrivableTrader extends Trader<Drivable> {
     public DrivableTrader(List<Drivable> inventory, List<Drivable> wishlist, int money) {
         super(inventory, wishlist, money);
