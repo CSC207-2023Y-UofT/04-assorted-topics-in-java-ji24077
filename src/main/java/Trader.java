@@ -68,20 +68,15 @@ public class Trader<T> {
      *
      *       We will call this in exchangeMoney().
      */
-    public boolean exchangeMoney(Trader<T> other, T item)
+    public int getSellingPrice(T item)
     {
-        int selling_price = this.getSellingPrice(item);
-        if (selling_price == Tradable.MISSING_PRICE) {
-            return false;
+        if (item instanceof Tradable)
+        {
+            return ((Tradable) item).getPrice();
         }
-
-        if (selling_price <= other.money) {
-            other.money -= selling_price;
-            this.money += selling_price;
-            return true;
-        }
-        return false;
+        return Tradable.MISSING_PRICE;
     }
+
 
 
 
@@ -92,19 +87,7 @@ public class Trader<T> {
      *
      * @return True if the exchange was completed.
      */
-    public boolean exchangeMoney(Trader<T> other, T item) {
-        int selling_price = this.getSellingPrice(item);
-        if (selling_price == Tradable.MISSING_PRICE) {
-            return false;
-        }
 
-        if (selling_price <= other.money) {
-            other.money -= selling_price;
-            this.money += selling_price;
-            return true;
-        }
-        return false;
-    }
 
     /**
      * Attempt to sell all items that are in both this Trader's inventory
