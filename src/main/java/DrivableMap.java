@@ -30,9 +30,9 @@ class DrivableMap {
 
 
 
-    public  addDrivable(String ID, Drivable obj)
+    public addDrivable(String ID, Drivable obj)
     {
-        if(!drivable_map.containsKey(id)) //get보다남
+        if(!drivable_map.containsKey(id))
         {
             drivable_map.put(id, obj);
             return true;
@@ -54,7 +54,7 @@ class DrivableMap {
     {
         for (Drivable obj : drivable_map.values())
         {
-            if (drivable.getMaxSpeed() >= speed)
+            if (obj.getMaxSpeed() >= speed)
             {
                 return true;
             }

@@ -38,9 +38,8 @@ class DrivableTrader extends Trader<Drivable>
         if (super_price == Tradable.MISSING_PRICE) {
             return super_price;
         }
-        int Obj_Price = super_price;
-        int Obj_Speed = item.getMaxSpeed();
-        return Obj_Speed + Obj_Speed;
+
+        return  super_price + item.getMaxSpeed();
     }
 }
 
