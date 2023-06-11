@@ -29,7 +29,7 @@ class DrivableMap {
 
 
 
-    public addDrivable(String ID, Drivable obj)
+    public boolean addDrivable(String ID, Drivable obj)
     {
         if(!drivable_map.containsKey(id))
         {
