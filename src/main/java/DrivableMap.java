@@ -32,9 +32,9 @@ class DrivableMap {
 
     public boolean addDrivable(String ID, Drivable obj)
     {
-        if(!drivable_map.containsKey(Id))
+        if(!drivable_map.containsKey(ID))
         {
-            drivable_map.put(Id, obj);
+            drivable_map.put(ID, obj);
             return true;
         }
         return false;
