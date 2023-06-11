@@ -73,7 +73,7 @@ class DrivableMap {
         List<T> tradables = new ArrList<>();
         for (Drivable obj : drivable_map.values())
         {
-            if (obj instanceof Tradable)
+            if (obj instanceof T)
             {
                 tradables.add((T) obj);
             }
