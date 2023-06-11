@@ -68,12 +68,12 @@ class DrivableMap {
      *       returns a List containing all of the Tradable items in
      *       drivable_map.
      */
-    public List<Drivable> getTradable()
+    public List<DrivableMap> getTradable()
     {
-        List<Drivable> tradables = new ArrList<>();
+        List<DrivableMap> tradables = new ArrList<>();
         for (Drivable obj : drivable_map.values())
         {
-            if (obj instanceof Drivable)
+            if (obj instanceof DrivableMap)
             {
                 tradables.add((Drivable) obj);
             }
