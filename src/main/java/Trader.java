@@ -68,15 +68,20 @@ public class Trader<T> {
      *
      *       We will call this in exchangeMoney().
      */
-    public int getSellingPrice(T item)
+    public boolean exchangeMoney(Trader<T> other, T item)
     {
-        if (item instanceof Tradable)
-        {
-            return ((Tradable) item).getPrice();
+        int selling_price = this.getSellingPrice(item);
+        if (selling_price == Tradable.MISSING_PRICE) {
+            return false;
         }
-        return Tradable.MISSING_PRICE;
-    }
 
+        if (selling_price <= other.money) {
+            other.money -= selling_price;
+            this.money += selling_price;
+            return true;
+        }
+        return false;
+    }
 
 
 

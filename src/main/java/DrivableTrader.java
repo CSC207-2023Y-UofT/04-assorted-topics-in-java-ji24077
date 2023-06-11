@@ -13,33 +13,22 @@
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
-public class DrivableTrader<T extends Drivable> extends Trader<T> {
-    public DrivableTrader(List<T> inventory, List<T> wishlist, int money) {
+public class DrivableTrader extends Trader<Drivable> {
+    public DrivableTrader(List<Drivable> inventory, List<Drivable> wishlist, int money) {
         super(inventory, wishlist, money);
     }
 
-    public DrivableTrader(int money) {
-        super(money);
-    }
-}
+    public DrivableTrader(int money) {super(new ArrayList<>(), new ArrayList<>(), money);}
 
-    /**
-     * Construct a DomesticatableTrader, giving them the
-     * given money and an empty wishlist and inventory.
-     *
-     * @param money     The Trader's money
-     */
-
-
-    public int getSellingPrice(Domesticatable item) {
-        int super_price = super.getSellingPrice(item);
-
-        if (super_price == Tradable.MISSING_PRICE) {
-            return super_price;
+    public int getSellingPrice(Drivable item) {
+        if (item instanceof Tradable)
+        {
+            Tradable tradable_Item = (Tradable) item;
+            return tradable_Item.getPrice() + item.getMaxSpeed();
         }
-
-        return  super_price + item.getMaxSpeed();
+        else
+        {
+            return Tradable.MISSING_PRICE;
+        }
     }
 }
-
-
